@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Theme Studio Preset Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the preset"
+    },
+    "type": {
+      "description": "Type of preset",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["vs", "hc-black", "vs-dark"]
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the preset"
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of the preset"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon of the preset"
+    },
+    "colors": {
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "type": "string"
+        }
+      }
+    },
+    "semanticHighlighting": {
+      "type": "boolean",
+      "description": "Whether semantic highlighting should be enabled for this theme."
+    }
+    /*     "tokenColors": {
+
+    },
+    "semanticTokenColors": {} */
+  }
+}
