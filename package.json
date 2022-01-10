@@ -65,6 +65,21 @@
           "group": "navigation"
         }
       ]
+    },
+    "configuration": {
+      "title": "Theme Studio Helper",
+      "properties": {
+        "vscode-theme-studio-helper.show-icons": {
+          "type": "boolean",
+          "description": "Show TStudio icons in the editor (material-icon-theme required)",
+          "default": true
+        },
+        "vscode-theme-studio-helper.installation-path": {
+          "type": "string",
+          "description": "Installation path of VSCode",
+          "default": ""
+        }
+      }
     }
   },
   "scripts": {

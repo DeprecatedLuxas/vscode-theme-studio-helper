@@ -1,4 +1,5 @@
-import { commands, tasks, ExtensionContext, Task, window } from "vscode";
+import { commands, tasks, ExtensionContext, Task, window, extensions } from "vscode";
+import { configuration } from "./configuration";
 
 export function activate(context: ExtensionContext) {
 
@@ -7,6 +8,7 @@ export function activate(context: ExtensionContext) {
     commands.registerCommand(
       "vscode-theme-studio-helper.build-file",
       async () => {
+        
         const workspaceTasks = (await tasks.fetchTasks()).filter(
           (task: Task) => task.name === "Generate Types"
         );
@@ -20,6 +22,16 @@ export function activate(context: ExtensionContext) {
       }
     )
   );
+
+
+  const materialIconExtension = extensions.getExtension("pkief.material-icon-theme");
+  if (materialIconExtension) {
+    
+    if (configuration.get("show-icons")) {
+      console.log("Showing icons");
+    }
+
+  }
 }
 
 export function deactivate() {}
